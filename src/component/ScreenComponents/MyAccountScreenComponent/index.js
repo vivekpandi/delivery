@@ -19,10 +19,10 @@ const DATA = [
   {
     title: '',
     data: [
-      {title: 'Your Orders', image: Images.Shop_Icon, navigation: 'HelpScreen'},
+      {title: 'Your Orders', image: Images.orders, navigation: 'HelpScreen'},
       {
         title: 'Address Book',
-        image: Images.Order_Icon,
+        image: Images.AddressBook,
         navigation: 'HelpScreen',
       },
     ],
@@ -32,17 +32,17 @@ const DATA = [
     data: [
       {
         title: 'Share the App',
-        image: Images.Location,
+        image: Images.Share,
         navigation: 'ManageAddress',
       },
       {
         title: 'About us',
-        image: Images.Favorite,
+        image: Images.about,
         navigation: 'HelpScreen',
       },
       {
         title: 'Rate us on the playstore',
-        image: Images.Setting_icon,
+        image: Images.rateus,
         navigation: 'Settings',
       },
     ],
@@ -187,6 +187,18 @@ const styles = StyleSheet.create({
   renderInformationStyle: {
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  menuIcon: {
+    width: wp(6),
+    height: hp(4),
+    resizeMode: 'contain',
+  },
+  menuLeftArrow: {
+    width: wp(3.8),
+    height: hp(3),
+  },
+  menuText: {
+    marginLeft: wp(8),
   },
 });
 

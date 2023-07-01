@@ -6,14 +6,19 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {TextView} from '../../../component/TextView/index';
 import {hp, wp} from '../../../resources/dimensions';
 import {colors, commonColors} from '../../../component/Styles/styleSheet';
+import {useNavigation} from '@react-navigation/native';
+import RBSheet from 'react-native-raw-bottom-sheet';
+import See_All_Component from '../../../screens/home_screen/seeAll';
 
 const IMAGE = [{food_Image: require('../../../assets/Home_Screen/burger.png')}];
 
 const BestSellersComponent = () => {
+  const navigation = useNavigation();
+  const refRBSheet = useRef();
   // eslint-disable-next-line react/no-unstable-nested-components
   const RenderBestSeller = ({item}) => (
     <TouchableOpacity>
@@ -70,13 +75,16 @@ const BestSellersComponent = () => {
         </TextView>
       </View>
       <View style={styles.seeAllStyles}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => refRBSheet.current.open()}>
           <View style={styles.seeAllButtonStyles}>
             <TextView variant={'sh4'} color={colors.orange}>
               See all
             </TextView>
           </View>
         </TouchableOpacity>
+        <RBSheet ref={refRBSheet} closeOnPressMask={false} height={hp(85)}>
+          <See_All_Component />
+        </RBSheet>
         <TouchableOpacity>
           <View style={styles.seeAllButtonStyles}>
             <TextView variant={'sh4'} color={colors.orange}>
@@ -87,6 +95,7 @@ const BestSellersComponent = () => {
       </View>
     </View>
   );
+
   return (
     <View>
       <BestSellerText />

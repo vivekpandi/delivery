@@ -43,24 +43,20 @@ const IMAGE = [
   },
 ];
 const See_All_Component = () => {
+  // eslint-disable-next-line react/no-unstable-nested-components
   const TitleComponent = () => (
-    <View
-      style={{
-        flexDirection: 'row',
-        marginHorizontal: wp(4),
-        marginTop: hp(2),
-        justifyContent: 'space-between',
-      }}>
+    <View style={styles.titleText}>
       <TextView variant={'h4'} color={colors.commonText}>
         Milk,Curd & Panner
       </TextView>
       <TouchableOpacity style={{alignSelf: 'center'}}>
-        <TextView style={styles.seeText} variant={'h6'} color={colors.green}>
+        <TextView style={styles.seeAllText} variant={'h6'} color={colors.green}>
           see all
         </TextView>
       </TouchableOpacity>
     </View>
   );
+  // eslint-disable-next-line react/no-unstable-nested-components
   const RenderShopCategory = ({item}) => (
     <View style={{justifyContent: 'space-between'}}>
       <TouchableOpacity>
@@ -70,24 +66,11 @@ const See_All_Component = () => {
           <TextView variant={'sh6'} style={styles.diaryText}>
             {item.title}
           </TextView>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginRight: wp(3),
-            }}>
+          <View style={styles.subView}>
             <TextView variant={'sh6'} style={styles.diaryText2}>
               {item.amount}
             </TextView>
-            <TouchableOpacity
-              style={{
-                borderWidth: wp(0.5),
-                alignSelf: 'center',
-                borderColor: colors.green,
-                height: hp(5),
-                width: wp(13),
-                borderRadius: wp(2),
-              }}>
+            <TouchableOpacity style={styles.addButton}>
               <TextView
                 variant={'h6'}
                 color={colors.green}
@@ -107,15 +90,35 @@ const See_All_Component = () => {
         data={IMAGE}
         renderItem={RenderShopCategory}
         numColumns={2}
-        style={{backgroundColor: colors.white, marginTop: hp(3)}}
+        style={styles.imageViewStyle}
       />
     </SafeAreaView>
   );
 };
 const styles = StyleSheet.create({
-  seeText: {
+  seeAllText: {
     alignItems: 'center',
     alignSelf: 'center',
+  },
+  imageViewStyle: {backgroundColor: colors.white, marginTop: hp(3)},
+  subView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: wp(3),
+  },
+  addButton: {
+    borderWidth: wp(0.5),
+    alignSelf: 'center',
+    borderColor: colors.green,
+    height: hp(5),
+    width: wp(13),
+    borderRadius: wp(2),
+  },
+  titleText: {
+    flexDirection: 'row',
+    marginHorizontal: wp(4),
+    marginTop: hp(2),
+    justifyContent: 'space-between',
   },
   backgroundView: {
     width: wp(42),

@@ -163,7 +163,7 @@ const ShopCategoryComponent = () => {
     <View>
       <TextView
         variant={'h3'}
-        color={colors.white}
+        color={colors.black}
         style={styles.shopCategoryStyle}>
         Shop by Category
       </TextView>
@@ -225,14 +225,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginLeft: wp(6),
     fontSize: 16,
-    color: colors.white,
+    color: colors.black,
     marginTop: hp(2),
   },
   bakeriesText: {
     alignSelf: 'center',
     marginLeft: wp(6),
     fontSize: 16,
-    color: colors.white,
+    color: colors.black,
     marginTop: hp(2),
   },
   healthDrinksBackgroundView: {
@@ -256,7 +256,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginLeft: wp(6),
     fontSize: 16,
-    color: colors.white,
+    color: colors.black,
     marginTop: hp(2),
   },
   healthDrinkFlatListStyles: {

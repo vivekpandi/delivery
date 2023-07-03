@@ -33,8 +33,8 @@ export const commonColors = {
   lightBlue_2: 'rgba(0,123,139,.8)',
   lightBlue_4: 'rgba(0,54,63,.4)',
   lightBlue_3: '#0D859B',
-  lightBlue_3: '#0D859B',
 
+  sunshine_yellow: '#FFFD37',
   green: '#00920D',
   green2: '#00363F',
   dark_blue: '#007B8B',

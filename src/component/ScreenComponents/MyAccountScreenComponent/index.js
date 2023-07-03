@@ -8,12 +8,15 @@ import {
   SectionList,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {TextView} from '../../../component/TextView/index';
 import {hp, wp} from '../../../resources/dimensions';
 import {LocalImageView} from '../../../component/Image/index';
+import {useNavigation} from '@react-navigation/native';
 import Images from '../../../resources/images';
 import {colors, commonColors} from '../../../component/Styles/styleSheet';
+import RBSheet from 'react-native-raw-bottom-sheet';
+import GetFeedingReceiptComponent from '../../../component/ScreenComponents/GetFeedingReceiptComponent';
 
 const DATA = [
   {
@@ -41,6 +44,11 @@ const DATA = [
         navigation: 'HelpScreen',
       },
       {
+        title: 'Get Feeding india receipt',
+        image: Images.rateus,
+        navigation: 'GetFeedingReceiptComponent',
+      },
+      {
         title: 'Rate us on the playstore',
         image: Images.rateus,
         navigation: 'Settings',
@@ -50,6 +58,9 @@ const DATA = [
 ];
 
 const MyAccountScreenComponent = () => {
+  const navigation = useNavigation();
+  const refRBSheet = useRef();
+
   // eslint-disable-next-line react/no-unstable-nested-components
   const WalletComponent = () => (
     <View style={styles.parrentViewStyle}>
@@ -93,7 +104,9 @@ const MyAccountScreenComponent = () => {
   );
 
   const renderInformationItems = ({item, index}) => (
-    <TouchableOpacity style={styles.menuContainer}>
+    <TouchableOpacity
+      style={styles.menuContainer}
+      onPress={() => refRBSheet.current.open()}>
       <View style={styles.renderInformationStyle}>
         <Image source={item.image} style={styles.menuIcon} />
         <TextView variant={'p5'} color={'#424244'} style={styles.menuText}>
@@ -103,6 +116,13 @@ const MyAccountScreenComponent = () => {
       <View>
         <Image source={Images.Arrow} style={styles.menuLeftArrow} />
       </View>
+      <RBSheet
+        ref={refRBSheet}
+        closeOnPressMask={false}
+        closeOnDragDown={true}
+        height={hp(85)}>
+        <GetFeedingReceiptComponent />
+      </RBSheet>
     </TouchableOpacity>
   );
   const renderInformationHeader = ({section: {title}}) => (

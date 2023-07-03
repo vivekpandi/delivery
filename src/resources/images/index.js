@@ -1,5 +1,5 @@
 const Images = {
-  SplashScreenVector: require('../../assets/splash_screen/Vector(3).png'),
+  SplashScreenVector: require('../../assets/splash_screen/bike.png'),
   SplashScreen: require('../../assets/splash_screen/food_bike.png'),
   Elipse: require('../../assets/Home_Screen/Ellipse14.png'),
   imagevector: require('../../assets/Home_Screen/Image1.png'),

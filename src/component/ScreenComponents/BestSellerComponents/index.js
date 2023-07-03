@@ -52,7 +52,7 @@ const BestSellersComponent = () => {
   // eslint-disable-next-line react/no-unstable-nested-components
   const BestSellerText = () => (
     <View>
-      <TextView variant={'h3'} color={colors.white} style={styles.sellerStyle}>
+      <TextView variant={'h3'} color={colors.black} style={styles.sellerStyle}>
         Best Sellers
       </TextView>
     </View>
@@ -63,13 +63,13 @@ const BestSellersComponent = () => {
       <View style={styles.productsStyles}>
         <TextView
           variant={'l3'}
-          color={colors.white}
+          color={colors.black}
           style={styles.diaryTextStyle}>
           Diary Products
         </TextView>
         <TextView
           variant={'l3'}
-          color={colors.white}
+          color={colors.black}
           style={styles.vegetableTextStyle}>
           Vegetables
         </TextView>
@@ -77,17 +77,21 @@ const BestSellersComponent = () => {
       <View style={styles.seeAllStyles}>
         <TouchableOpacity onPress={() => refRBSheet.current.open()}>
           <View style={styles.seeAllButtonStyles}>
-            <TextView variant={'sh4'} color={colors.orange}>
+            <TextView variant={'sh4'} color={colors.green}>
               See all
             </TextView>
           </View>
         </TouchableOpacity>
-        <RBSheet ref={refRBSheet} closeOnPressMask={false} height={hp(85)}>
+        <RBSheet
+          ref={refRBSheet}
+          closeOnPressMask={false}
+          closeOnDragDown={true}
+          height={hp(85)}>
           <See_All_Component />
         </RBSheet>
         <TouchableOpacity>
           <View style={styles.seeAllButtonStyles}>
-            <TextView variant={'sh4'} color={colors.orange}>
+            <TextView variant={'sh4'} color={colors.green}>
               See all
             </TextView>
           </View>
@@ -107,6 +111,7 @@ const BestSellersComponent = () => {
 const styles = StyleSheet.create({
   sellerStyle: {
     marginHorizontal: wp(6),
+    marginTop: hp(2),
   },
   backgroundFirstView: {
     width: wp(40),
@@ -148,7 +153,7 @@ const styles = StyleSheet.create({
   },
   seeAllButtonStyles: {
     alignSelf: 'center',
-    backgroundColor: colors.white,
+    backgroundColor: colors.primaryBorderColor,
     borderRadius: wp(3),
     justifyContent: 'center',
     alignItems: 'center',

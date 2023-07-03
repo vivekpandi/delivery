@@ -27,29 +27,27 @@ const Home_Screen = () => {
         <TextView
           variant={'h6'}
           style={styles.deliveryText}
-          color={colors.white}>
+          color={colors.black}>
           DELIVARY IN
         </TextView>
-        <TextView variant={'h3'} style={styles.timeText} color={colors.white}>
+        <TextView variant={'h3'} style={styles.timeText} color={colors.black}>
           12 Minutes
         </TextView>
         <TextView
           variant={'h6'}
           style={styles.locationText}
-          color={colors.white}>
+          color={colors.GREYS}>
           Home - Chennai .
         </TextView>
       </View>
       <View style={styles.backgroundViewStyle}>
         <TouchableOpacity onPress={onProfilePressed}>
-          <ImageBackground
-            source={Images.Elipse}
-            style={styles.elipseImgaAgeStyle}>
+          <View style={styles.elipseImgaAgeStyle}>
             <Image
               source={Images.imagevector}
               style={styles.imageVectorStyle}
             />
-          </ImageBackground>
+          </View>
         </TouchableOpacity>
       </View>
     </View>
@@ -84,7 +82,7 @@ const Home_Screen = () => {
 };
 const styles = StyleSheet.create({
   parrentContainer: {
-    backgroundColor: colors.orange,
+    backgroundColor: colors.white,
     height: hp(100),
     paddingBottom: hp(4),
   },
@@ -108,16 +106,20 @@ const styles = StyleSheet.create({
   },
 
   elipseImgaAgeStyle: {
-    width: wp(13),
-    height: wp(13),
-    borderRadius: wp(7),
+    width: wp(16),
+    height: wp(16),
+    borderRadius: wp(8),
     alignSelf: 'center',
+    borderColor: colors.black,
+    borderWidth: wp(1.5),
   },
   imageVectorStyle: {
-    alignSelf: 'center',
-    width: wp(6.5),
-    height: hp(3),
+    width: wp(8),
+    height: wp(8),
+    borderRadius: wp(4),
     marginTop: hp(1),
+    alignSelf: 'center',
+    tintColor: colors.black,
   },
   searchTextInputStyle: {
     alignItems: 'center',
@@ -130,12 +132,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    height: hp(5),
+    height: hp(7),
     width: wp(83),
-    borderRadius: wp(6),
+    borderRadius: wp(2),
     marginTop: hp(3),
     marginLeft: wp(2),
-    backgroundColor: colors.white,
+    backgroundColor: colors.primaryBorderColor,
   },
 
   ImageStyle: {

@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   FlatList,
+  ScrollView,
 } from 'react-native';
 import React from 'react';
 import {hp, wp} from '../../resources/dimensions';
@@ -85,13 +86,15 @@ const See_All_Component = () => {
   );
   return (
     <SafeAreaView>
-      <TitleComponent />
-      <FlatList
-        data={IMAGE}
-        renderItem={RenderShopCategory}
-        numColumns={2}
-        style={styles.imageViewStyle}
-      />
+      <ScrollView style={{marginBottom: wp(5)}}>
+        <TitleComponent />
+        <FlatList
+          data={IMAGE}
+          renderItem={RenderShopCategory}
+          numColumns={2}
+          style={styles.imageViewStyle}
+        />
+      </ScrollView>
     </SafeAreaView>
   );
 };
@@ -100,7 +103,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
   },
-  imageViewStyle: {backgroundColor: colors.white, marginTop: hp(3)},
+  imageViewStyle: {
+    backgroundColor: colors.white,
+    marginTop: hp(2),
+    // bottom: hp(13),
+  },
   subView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -126,7 +133,7 @@ const styles = StyleSheet.create({
     borderRadius: wp(6),
     marginHorizontal: wp(4),
     backgroundColor: colors.primaryBorderColor,
-    marginTop: hp(3),
+    marginTop: hp(2),
   },
   shopCategoryStyle: {
     marginTop: hp(4),

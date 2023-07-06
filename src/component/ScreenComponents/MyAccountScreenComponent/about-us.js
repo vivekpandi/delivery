@@ -4,7 +4,7 @@ import React from 'react';
 const AboutusComponent = () => {
   return (
     <View>
-      <Text>index1</Text>
+      <Text>Tegha</Text>
     </View>
   );
 };

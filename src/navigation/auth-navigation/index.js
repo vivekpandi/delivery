@@ -21,6 +21,11 @@ const AuthNavigation = () => (
         name="SEE_ALL_COMPONENT"
         component={SCREENS.SEE_ALL_COMPONENT}
       />
+      <Stack.Screen name="About_Us" component={SCREENS.ABOUT_US} />
+      <Stack.Screen
+        name="HomeBestSellerComponent"
+        component={SCREENS.HOMEBESTSELLERCOMPONENT}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );

@@ -53,6 +53,7 @@ export const commonColors = {
   border_purple: '#443963',
   purple_bg: 'rgba(33,25,53,.5)',
   yellow_5: '#FFC54D',
+  blue: '#2B52F6',
 };
 
 export const colors = new ThemeManager({
@@ -76,6 +77,7 @@ export const colors = new ThemeManager({
     appBackgroundColor: '#fff',
     shareBg: '#F4F4F4',
     titleTextColor: '#4D4949',
+    blue: '#2B52F6',
   },
   LIGHT: {
     ...commonColors,
@@ -97,6 +99,7 @@ export const colors = new ThemeManager({
     appBackgroundColor: '#101010',
     shareBg: '#101010',
     titleTextColor: '#f4f4f4',
+    blue: '#2B52F6',
   },
 });
 

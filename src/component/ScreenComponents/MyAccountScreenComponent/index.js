@@ -17,16 +17,21 @@ import Images from '../../../resources/images';
 import {colors, commonColors} from '../../../component/Styles/styleSheet';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import GetFeedingReceiptComponent from '../../../component/ScreenComponents/GetFeedingReceiptComponent';
+import AboutusComponent from './about-us';
 
 const DATA = [
   {
     title: '',
     data: [
-      {title: 'Your Orders', image: Images.orders, navigation: 'HelpScreen'},
+      {
+        title: 'Your Orders',
+        image: Images.orders,
+        navigation: 'AboutusComponent',
+      },
       {
         title: 'Address Book',
         image: Images.AddressBook,
-        navigation: 'HelpScreen',
+        navigation: 'AboutusComponent',
       },
     ],
   },
@@ -36,12 +41,12 @@ const DATA = [
       {
         title: 'Share the App',
         image: Images.Share,
-        navigation: 'ManageAddress',
+        navigation: 'AboutusComponent',
       },
       {
         title: 'About us',
         image: Images.about,
-        navigation: 'HelpScreen',
+        navigation: 'About_Us',
       },
       {
         title: 'Get Feeding india receipt',
@@ -51,7 +56,7 @@ const DATA = [
       {
         title: 'Rate us on the playstore',
         image: Images.rateus,
-        navigation: 'Settings',
+        navigation: 'AboutusComponent',
       },
     ],
   },
@@ -106,7 +111,10 @@ const MyAccountScreenComponent = () => {
   const renderInformationItems = ({item, index}) => (
     <TouchableOpacity
       style={styles.menuContainer}
-      onPress={() => refRBSheet.current.open()}>
+      // onPress={() => refRBSheet.current.open(item.navigation)}
+      onPress={() => {
+        navigation.navigate(item.navigation);
+      }}>
       <View style={styles.renderInformationStyle}>
         <Image source={item.image} style={styles.menuIcon} />
         <TextView variant={'p5'} color={'#424244'} style={styles.menuText}>
@@ -122,6 +130,8 @@ const MyAccountScreenComponent = () => {
         closeOnDragDown={true}
         height={hp(85)}>
         <GetFeedingReceiptComponent />
+        <AboutusComponent />
+        {/* <item.navigation /> */}
       </RBSheet>
     </TouchableOpacity>
   );

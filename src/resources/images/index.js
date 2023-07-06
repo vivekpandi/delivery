@@ -3,7 +3,7 @@ const Images = {
   SplashScreen: require('../../assets/splash_screen/food_bike.png'),
   Elipse: require('../../assets/Home_Screen/Ellipse14.png'),
   imagevector: require('../../assets/Home_Screen/Image1.png'),
-  searchVector: require('../../assets/Home_Screen/Vector(4).png'),
+  searchVector: require('../../assets/Home_Screen/searchicon.png'),
   diaryProduct: require('../../assets/Home_Screen/diary-product.png'),
   bakeries: require('../../assets/Home_Screen/bakeries.png'),
   mcDonalds: require('../../assets/Home_Screen/mcdonals.png'),
@@ -18,5 +18,6 @@ const Images = {
   Share: require('../../assets/My_Account/share.png'),
   about: require('../../assets/My_Account/about.png'),
   rateus: require('../../assets/My_Account/rate.png'),
+  BackIcon: require('../../assets/Home_Screen/backArrow.png'),
 };
 export default Images;

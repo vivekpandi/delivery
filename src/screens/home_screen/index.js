@@ -114,10 +114,11 @@ const styles = StyleSheet.create({
     borderWidth: wp(1.5),
   },
   imageVectorStyle: {
-    width: wp(8),
+    width: wp(7),
     height: wp(8),
     borderRadius: wp(4),
     marginTop: hp(1),
+    resizeMode: 'contain',
     alignSelf: 'center',
     tintColor: colors.black,
   },

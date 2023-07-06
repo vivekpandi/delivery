@@ -89,7 +89,7 @@ const BestSellersComponent = () => {
           height={hp(85)}>
           <See_All_Component />
         </RBSheet>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onSeeAllPressed}>
           <View style={styles.seeAllButtonStyles}>
             <TextView variant={'sh4'} color={colors.green}>
               See all
@@ -99,6 +99,10 @@ const BestSellersComponent = () => {
       </View>
     </View>
   );
+
+  const onSeeAllPressed = () => {
+    navigation.navigate('HomeBestSellerComponent');
+  };
 
   return (
     <View>

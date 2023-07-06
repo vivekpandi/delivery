@@ -25,19 +25,19 @@ const SplashScreen = () => {
 
   function navigateToLogin() {
     setTimeout(() => {
-      navigation.navigate('Login');
+      navigation.navigate('Home_Screen');
     }, 1000);
   }
 
   return (
     <SafeAreaView>
       <View style={styles.parrentContainer}>
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Image
             source={Images.SplashScreenVector}
             style={styles.vectorImageStyle}
           />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <TextView variant={'h1'} color={colors.black} style={styles.textStyle}>
           Food for Everyone
         </TextView>
@@ -58,7 +58,8 @@ const SplashScreen = () => {
 };
 const styles = StyleSheet.create({
   parrentContainer: {
-    backgroundColor: colors.sunshine_yellow,
+    // backgroundColor: colors.sunshine_yellow,
+    backgroundColor: '#ffd700',
     height: hp(100),
   },
   deliveryBikeStyle: {
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
     marginLeft: wp(10),
   },
   textStyle: {
-    marginTop: hp(4),
+    marginTop: hp(14),
     marginLeft: wp(10),
   },
   textViewStyles: {
